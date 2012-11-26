@@ -13,7 +13,7 @@ find_package(Boost REQUIRED)
 include_directories(${BOOST_INCLUDE_DIR})
 
 pkg_check_modules(EIGEN3 REQUIRED "eigen3")
-include_directories(${EIGEN2_INCLUDE_DIRS})
+include_directories(${EIGEN3_INCLUDE_DIRS})
 
 find_package(SISL)
 if (SISL_FOUND)
@@ -26,11 +26,13 @@ endif()
 
 INCLUDE(baseBase)
 
+if(NOT BUILD_STATIC)
 FIND_PACKAGE(Boost COMPONENTS unit_test_framework)
 IF (Boost_UNIT_TEST_FRAMEWORK_FOUND)
     MESSAGE(STATUS "boost/test found ... building test suite")
     ADD_SUBDIRECTORY(test)
 ENDIF(Boost_UNIT_TEST_FRAMEWORK_FOUND)
+endif()
 
 find_package(Rock)
 include(RockRuby)
