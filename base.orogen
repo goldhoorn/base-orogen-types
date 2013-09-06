@@ -12,6 +12,8 @@ import_types_from "base/commands/Motion2D.hpp"
 import_types_from "base/commands/AUVPosition.hpp"
 import_types_from "base/commands/Speed6D.hpp"
 import_types_from "base/commands/Joints.hpp"
+import_types_from "base/commands/JointsSampledTrajectory.hpp"
+import_types_from "base/commands/RigidBodyStateSampledTrajectory.hpp"
 import_types_from "base/samples/Frame.hpp"
 import_types_from "base/samples/LaserScan.hpp"
 import_types_from "base/samples/SonarBeam.hpp"
@@ -81,6 +83,8 @@ typekit do
         '/base/commands/AUVMotion',
         '/base/commands/AUVPosition',
         '/base/commands/Joints',
+        'base/commands/JointsSampledTrajectory',
+        'base/commands/RigidBodyStateSampledTrajectory',
         '/base/JointLimits',
         '/base/Trajectory',
         '/std/vector</base/Trajectory>',
